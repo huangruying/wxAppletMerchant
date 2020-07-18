@@ -1,0 +1,19 @@
+<view class="reconciliation">
+   <view class="reconciliation_title">
+     <text>时间</text>
+     <text>金额</text>
+     <text>状态</text>
+   </view>
+   <view class="item">
+      <view wx:for="{{dataList}}" wx:key="id" wx:for-item="i" bindtap="goDetails" data-count = "{{ i.month }}">
+        <view class="date">{{ i.month }}</view>
+        <text>{{ i.totalAmount }}</text>
+        <view wx:if="{{ i.status == 0 }}" class="btn">去确认</view>
+        <view wx:else class="btn_text">已确认</view>
+      </view>
+      <view class="node_data" wx:if="{{ nodeData }}">没有更多了~</view>
+      <view wx:if="{{ loading }}" class="node_data">
+        <van-loading type="spinner" color="#1989fa">加载中...</van-loading>
+      </view>
+   </view>
+</view>
