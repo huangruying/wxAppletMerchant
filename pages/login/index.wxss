@@ -1,6 +1,10 @@
 .login_index{
   padding: 45rpx;
 }
+.colorbtn{
+  background-color: #444444 !important;
+  /* color: #666 !important; */
+}
 .title{
   padding-left: 25rpx;
   border-left: 6rpx solid #007AFF;
@@ -28,6 +32,11 @@
   border-radius: 10rpx;
 }
 .input_code .btn{
+  text-align: center;
+  color: #fff;
+  line-height: 82rpx;
+  background-color: #1989fa;
+  border-radius: 10rpx;
   width: 40%;
 }
 .input_img >image{

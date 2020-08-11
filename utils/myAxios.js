@@ -1,6 +1,5 @@
 // 项目的根路径
-// export const baseUrl = 'http://192.168.0.160:8189/yuyuetrip/wash';
-export const baseUrl = 'https://mpbt.yuyuetrip.com.cn/wash';
+export const baseUrl = 'https://mpb.yuyuetrip.com.cn/wash';
 
 // myAxios 函数，params 发请求时传入的参数
 export const myAxios = (params) => {
@@ -74,7 +73,6 @@ export const myAxios = (params) => {
                 wx.hideNavigationBarLoading();
             }
         });
-
     });
 }
 

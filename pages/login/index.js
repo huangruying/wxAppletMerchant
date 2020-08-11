@@ -11,7 +11,10 @@ Page({
     imgCode: "",
     code: "",
     url: "",
-    openId: null
+    openId: null,
+    textCode: "发送验证码",
+    timeId: null,
+    tiems: false
   },
 
   /**
@@ -58,6 +61,9 @@ Page({
   },
   async getCode(e){
     var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
+    if (this.data.tiems) {
+      return false;
+    }
     if(!this.data.imgCode){
       wx.showToast({
         title: '请输入图形验证码！',
@@ -93,6 +99,22 @@ Page({
       })
       return
      }else{
+      var num = 60;
+      var timeId = this.data.timeId;
+      timeId = setInterval(() => {
+        if (num === 0) {
+          clearInterval(timeId)
+          this.setData({
+            textCode: "发送验证码",
+            tiems: false
+          })
+        } else {
+          this.setData({
+            tiems: true,
+            textCode: "请等待" + num--
+          })
+        }
+      }, 1000);
       wx.showToast({
         title: "请留意手机短信!",
         duration: 2000
